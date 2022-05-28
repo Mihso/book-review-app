@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>make it stick - Book Reviews</title>
+        <link rel="stylesheet" href={% static "book-review.css" %}">
+    </head>
+    <body>
+        <header>
+            <div>
+                My Book Reviews
+            </div>
+            <nav>
+                <a href="{% url "reviews_list" %}">Back to List</a>
+                <a href="{% url "create_review" %}">Create a Review</a>
+            </nav>
+        </header>
+        <main>
+            <div class="detail-page-book-review">
+                <img class="book-cover" src="{{ review.cover_image }}">
+                <h1>make it stick</h1>
+                <div class="book-rating">
+                    {{ review.rating }} stars
+                </div>
+                <div class="book-authors">
+                    {{ review.authors }}
+                </div>
+                <h2>
+                    Summary
+                </h2>
+                <p>
+                    {{ review.summary }}
+                </p>
+                <h2>
+                    My Review
+                </h2>
+                <div>
+                    <p>
+                        {{ review.review }}
+                    </p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div>
+                Copyright 2022 by Matthew Oshimo
+            </div>
+            <p>
+                You were fooled, this is actually a website about me rambling.
+            </p>
+        </footer>
+    </body>
+</html>
